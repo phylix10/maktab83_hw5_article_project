@@ -42,8 +42,13 @@ public class UserService {
     }
 
     public void changePassword(String oldPassword, String newPassword) {
-        UserRepository.updateUserPassword(oldPassword, newPassword, loggedInUser.getUsername());
-        System.out.println("Password changed successfully");
+        if (loggedInUser.getPassword().equals(oldPassword)) {
+            UserRepository.updateUserPassword(oldPassword, newPassword, loggedInUser.getUsername());
+            System.out.println("Password changed successfully");
+        }
+        else {
+            System.out.println("Old password is incorrect");
+        }
     }
 
     public void showMyArticles(){
