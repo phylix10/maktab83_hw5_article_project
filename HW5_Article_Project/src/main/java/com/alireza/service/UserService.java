@@ -42,7 +42,7 @@ public class UserService {
     }
 
     public void changePassword(String oldPassword, String newPassword) {
-        UserRepository.updateUserPassword(oldPassword, newPassword);
+        UserRepository.updateUserPassword(oldPassword, newPassword, loggedInUser.getUsername());
         System.out.println("Password changed successfully");
     }
 

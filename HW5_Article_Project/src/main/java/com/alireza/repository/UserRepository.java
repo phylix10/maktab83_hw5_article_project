@@ -10,7 +10,7 @@ public class UserRepository {
             "values (?,?,?,?)";
     private static final String SELECT_USER_BY_USERNAME_QUERY = "select * from users where username = ?";
     private static final String SELECT_USER_BY_NATIONAL_CODE_QUERY = "select * from users where national_code = ?";
-    private static final String UPDATE_USER_PASSWORD_QUERY = "update users set password = ? where password = ?";
+    private static final String UPDATE_USER_PASSWORD_QUERY = "update users set password = ? where password = ? and username = ?";
 
     public static void createUser(User user){
         try {
@@ -86,12 +86,13 @@ public class UserRepository {
         }
         return null;
     }
-    public static void updateUserPassword(String oldPassword, String newPassword){
+    public static void updateUserPassword(String oldPassword, String newPassword, String username){
         try {
             Connection connection = DatabaseConnection.getInstance();
             PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_USER_PASSWORD_QUERY);
             preparedStatement.setString(1, newPassword);
             preparedStatement.setString(2, oldPassword);
+            preparedStatement.setString(3, username);
 
             preparedStatement.executeUpdate();
 
