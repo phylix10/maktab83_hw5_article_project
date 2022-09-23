@@ -65,8 +65,8 @@ public class UserService {
         System.out.println("An article has been successfully added");
     }
 
-    public void editMyPublishedArticle(String title, Article article){
-        articleService.editPublishedArticle(loggedInUser.getUsername(),title,article);
+    public void editMyPublishedArticle(Article article, boolean isPublished){
+        articleService.editPublishedArticle(loggedInUser.getUsername(),article.getTitle(),isPublished);
         System.out.println("The publication status of the article has been successfully changed");
     }
 }

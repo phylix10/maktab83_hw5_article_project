@@ -25,7 +25,7 @@ public class ArticleService {
         ArticleRepository.createArticle(id,article);
     }
 
-    public void editPublishedArticle(String username, String title, Article article){
-        ArticleRepository.updatePublishedArticle(username, title, article);
+    public void editPublishedArticle(String username, String title, boolean is_published){
+        ArticleRepository.updatePublishedArticle(username, title, is_published);
     }
 }

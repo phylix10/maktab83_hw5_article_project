@@ -81,11 +81,11 @@ public class Main {
                                     String title2 = scanner.next();
 
                                     System.out.print("To publish or not to publish (true/false): ");
-                                    boolean isPublished = scanner.hasNext();
+                                    String isPublished = scanner.next();
 
-                                    Article article2 = new Article(isPublished);
+                                    Article article2 = new Article(title2);
 
-                                    userService.editMyPublishedArticle(title2, article2);
+                                    userService.editMyPublishedArticle(article2, Boolean.parseBoolean(isPublished));
                                     break;
                                 case 3:
                                     break;

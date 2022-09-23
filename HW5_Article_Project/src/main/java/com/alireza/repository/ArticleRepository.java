@@ -144,11 +144,11 @@ public class ArticleRepository {
         }
     }
 
-    public static void updatePublishedArticle(String username, String title, Article article) {
+    public static void updatePublishedArticle(String username, String title, boolean isPublished) {
         try {
             Connection connection = DatabaseConnection.getInstance();
             PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_ARTICLE_PUBLISH_QUERY);
-            preparedStatement.setBoolean(1, article.getPublished());
+            preparedStatement.setBoolean(1, isPublished);
             preparedStatement.setString(2, username);
             preparedStatement.setString(3, title);
 

@@ -21,8 +21,8 @@ public class Article {
         this.createDate = createDate;
     }
 
-    public Article(boolean isPublished) {
-        this.isPublished = isPublished;
+    public Article(String title) {
+        this.title = title;
     }
 
     public int getId() {
