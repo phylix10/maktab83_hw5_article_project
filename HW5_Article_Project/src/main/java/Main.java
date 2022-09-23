@@ -55,7 +55,7 @@ public class Main {
                             System.out.print("Please enter the title of each article to view its details: ");
                             int input3 = scanner.nextInt();
 
-                            switch (input3){
+                            switch (input3) {
                                 case 1:
                                     System.out.print("Enter the ID of the article you want to edit: ");
                                     int id1 = scanner.nextInt();
@@ -72,9 +72,9 @@ public class Main {
                                     System.out.println("Enter the createDate (year-month-day): ");
                                     String createDate1 = scanner.next();
 
-                                    Article article1 = new Article(title1,brief1,content1,Date.valueOf(createDate1));
+                                    Article article1 = new Article(title1, brief1, content1, Date.valueOf(createDate1));
 
-                                    userService.editMyArticle(id1,article1);
+                                    userService.editMyArticle(id1, article1);
                                     break;
                                 case 2:
                                     System.out.print("Enter the title of the article you want to publish: ");
@@ -89,7 +89,9 @@ public class Main {
                                     break;
                                 case 3:
                                     break;
+
                             }
+                            break;
                         case 4:
                             System.out.print("Enter the title: ");
                             String title3 = scanner.next();
@@ -110,6 +112,7 @@ public class Main {
                         case 5:
                             break;
                     }
+                    break;
                 }
                 else {
                     System.out.println("User with this username and password was not found. Please register");
